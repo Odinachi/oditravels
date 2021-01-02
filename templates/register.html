@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>register</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        
+        <form action='register' method='POST' >
+
+            {% csrf_token %}
+            
+            <input type="text" name="first_name" id="" placeholder="First Name"> <br>
+            <input type="text" name="last_name" id="" placeholder="Last Name"> <br>
+            <input type="text" name="username" id="" placeholder="User Name"> <br>
+            <input type="email" name="email" id="" placeholder="exampl@email.com"> <br>
+            <input type="password" name="password1" id="" placeholder="password"> <br>
+            <input type="password" name="password2" id="" placeholder="confirm password"> <br>
+            <input type="submit" >
+        </form>
+
+        <div>
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+    
+    </body>
+</html>
